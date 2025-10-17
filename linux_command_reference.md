@@ -1,6 +1,6 @@
 # 🧭 **Linux Command Reference — Skylines Solutions**
 
-This file documents the essential Linux commands and concepts you’ve learned and practiced while simulating a real-world company environment using directories and files in WSL (Ubuntu on Windows).
+This file documents the essential Linux commands and concepts I’ve learned and practiced while simulating a real-world company environment using directories and files in WSL (Ubuntu on Windows).
 
 ---
 
@@ -118,7 +118,7 @@ Creates an empty file or updates the timestamp of an existing file.
   ```
 
 ### Notes
-You customized this command in `.bashrc` to show confirmation messages:
+I have customized this command in `.bashrc` to show confirmation messages:
 ```bash
 touch() {
   for file in "$@"; do
@@ -126,7 +126,7 @@ touch() {
   done
 }
 ```
-
+just prints created/updated on terminal when the command is executed
 ---
 
 ## Command
@@ -418,7 +418,7 @@ Displays the current logged-in user.
 
 # 🏗️ Project-Specific Context
 
-You’ve been simulating a **real-world company (Skylines Solutions)** using these commands:
+I’ve been simulating a **real-world company (Skylines Solutions)** using these commands:
 - Created directories: `HR`, `Finance`, `Sales`, `Development`
 - Created department-specific files using `touch`
 - Moved files between departments using `mv`
