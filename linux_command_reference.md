@@ -352,20 +352,28 @@ Essential for secure multi-user environments.
 
 ---
 
-## Command
-`grep`
+## Searching Text
 
-### Description
-Searches for patterns inside files.
+### `grep "<pattern>" <file>`
+**Description:** Searches for text matching a pattern in a file.  
+**Use Cases:** Find warnings or firewall messages in `system.log`.
 
-### Use Cases
-- Search for keywords in logs:
-  ```bash
-  grep "error" Development/logs.txt
-  ```
+### `grep -i "<pattern>" <file>`
+**Description:** Case-insensitive search for a pattern in a file.  
+**Use Cases:** Search for `"warning"` or `"firewall"` regardless of capitalization.
 
-### Notes
-Combine with pipes for powerful searches.
+### `grep -n "<pattern>" <file>`
+**Description:** Shows line numbers along with matching lines.  
+**Use Cases:** Locate exactly where warnings or logs occur.
+
+### `grep -l "<pattern>" <file(s)>`
+**Description:** Lists filenames that contain the matching pattern.  
+**Use Cases:** Identify which files contain `"Warning"` or `"logo"`.
+
+### `grep -R / -r "<pattern>" <directory>`
+**Description:** Recursively searches for a pattern in all files under a directory.  
+**Use Cases:** Find `"logo"` across all files in `Marketing/assets/`.
+
 
 ---
 
@@ -414,6 +422,23 @@ Displays the current logged-in user.
 ### Use Cases
 - Confirm your user privileges inside WSL.
 
+## System Info & WSL
+
+### `uname -a`
+**Description:** Shows full system information.  
+**Use Cases:** Check Linux kernel version in WSL.
+
+### `lsb_release -a`
+**Description:** Shows Linux distribution details.  
+**Use Cases:** Confirm Ubuntu version running on WSL.
+
+### `hostname`
+**Description:** Shows the system hostname.  
+**Use Cases:** Identify machine name in WSL.
+
+### `hostnamectl`
+**Description:** Displays system info (only works with systemd).  
+**Use Cases:** Not available in WSL; will fail with systemd error.
 ---
 
 # 🏗️ Project-Specific Context
