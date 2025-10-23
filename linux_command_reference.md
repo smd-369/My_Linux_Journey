@@ -476,14 +476,13 @@ Displays the current logged-in user.
 **Use Cases:** 
 - Not available in WSL; will fail with systemd error.
 
-  **Command**
-`ps aux`
+### `ps aux`
 
 **Description**
-Displays detailed information about all running processes, including the user, CPU and memory usage, and the command that started each process.
+- Displays detailed information about all running processes, including the user, CPU and memory usage, and the command that started each process.
 
 **Use Cases**
-Monitor system performance, identify resource-heavy processes, or troubleshoot unresponsive applications.
+- Monitor system performance, identify resource-heavy processes, or troubleshoot unresponsive applications.
 
 ---
 
