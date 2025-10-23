@@ -220,7 +220,7 @@ Opens text editors inside the terminal.
 - Create or modify department documents.
 
 ### Notes
-Use `Ctrl + X`, `Y`, `Enter` to save and exit `nano`.
+Use `Ctrl + O`, `Enter`, `Ctrl + x` to save and exit `nano`.
 
 ---
 
