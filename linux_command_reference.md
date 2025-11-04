@@ -4,9 +4,15 @@ This file documents the essential Linux commands and concepts I’ve learned and
 
 ---
 
-## Command
-`pwd`
+### Command Line Keywords
+---
 
+&nbsp;
+
+### 1. Print Working directory(shows Current Location)
+```
+pwd
+```
 ### Description
 Prints the current working directory — shows the absolute path you’re in.
 
@@ -17,10 +23,12 @@ Prints the current working directory — shows the absolute path you’re in.
 ### Notes
 Use this often when navigating multiple nested folders.
 
----
+&nbsp;
 
-## Command
-`ls` / `ls -l` / `ls -a`
+### 2. ls - lists the contents 
+```bash
+ls -la
+```
 
 ### Description
 Lists files and directories in the current location.
@@ -31,186 +39,184 @@ Lists files and directories in the current location.
 - Use `ls -a` to show hidden files like `.bashrc`.
 
 ### Notes
-Combine flags for more detail: `ls -la`.
+Combine flags for more detail: 
+```
+ls -la
+```
 
----
+&nbsp;
 
-## Command
-`cd`
+**3. Cd - change Directory**
+```
+cd
+```
+
 
 ### Description
 Changes the current directory.
 
 ### Use Cases
 - Move into department folders, e.g.:
-  ```bash
-  cd ~/Skylines_Solutions/Finance
-  ```
+  `cd ~/Skylines_Solutions/Finance`
 - Go back one level:
-  ```bash
-  cd ..
-  ```
+  `cd ..`
 
 ### Notes
 Use `cd ~` to return to your home directory.
 
----
+&nbsp;
 
-## Command
-`mkdir`
+### 4. mkdir- make directory ( creates folders )
+
+```bash
+mkdir
+```
 
 ### Description
 Creates one or more directories.
 
 ### Use Cases
 - Create department folders:
-  ```bash
-  mkdir HR Finance Sales Development
-  ```
+  `mkdir HR Finance Sales Development`
 - Create subfolders for projects:
-  ```bash
-  mkdir Development/ProjectA
-  ```
+  `mkdir Development/ProjectA`
 
 ### Notes
 Use `-p` to create nested directories in one go:
-```bash
-mkdir -p Development/Backend/API
+`mkdir -p Development/Backend/API`
+
+&nbsp;
+
+### 5. rmdir - remove directory (❗ Danger )
+&nbsp;
+
 ```
+rmdir
+``` 
 
----
-
-## Command
-`rmdir` / `rm -r`
+```
+rm -r
+```
 
 ### Description
 Removes directories.
 
 ### Use Cases
 - Remove empty folders:
-  ```bash
-  rmdir old_folder
-  ```
+  `rmdir old_folder`
 - Remove folders with files:
-  ```bash
-  rm -r Development/OldProject
-  ```
+  `rm -r Development/OldProject`
 
 ### Notes
 Use `-f` for force deletion (`rm -rf`) — **handle carefully**.
 
----
+&nbsp;
 
-## Command
-`touch`
+### 6. touch - mostly used to create files
+```bash
+touch
+```
 
 ### Description
 Creates an empty file or updates the timestamp of an existing file.
 
 ### Use Cases
 - Create department-specific documents:
-  ```bash
-  touch HR/policies.txt
-  ```
+  `touch HR/policies.txt`
 - Create multiple files:
-  ```bash
-  touch Finance/budget.txt Finance/report.txt
-  ```
+  `touch Finance/budget.txt Finance/report.txt`
 
-### Notes
-I have customized this command in `.bashrc` to show confirmation messages:
-```bash
-touch() {
-  for file in "$@"; do
-    command touch "$file" && echo "Created/updated: $file"
-  done
-}
-```
-just prints created/updated on terminal when the command is executed
+
+- just prints created/updated on terminal when the command is executed
+
+&nbsp;
 ---
-
-## Command
-`mv`
+### 7. Mv - move
+```bash
+mv
+```
 
 ### Description
 Moves or renames files and directories.
 
 ### Use Cases
 - Move files between departments:
-  ```bash
-  mv Sales/lead_data.txt Finance/
-  ```
+  `mv Sales/lead_data.txt Finance/`
 - Rename a file:
-  ```bash
-  mv report.txt final_report.txt
-  ```
+  `mv report.txt final_report.txt`
+  
 
 ### Notes
 Useful for reorganizing files in your company structure.
-
----
-
-## Command
-`cp`
+&nbsp;
+### 8. CP - copy
+```
+cp
+```
 
 ### Description
 Copies files and directories.
 
 ### Use Cases
 - Duplicate a report:
-  ```bash
-  cp Finance/report.txt Finance/report_backup.txt
-  ```
+  `cp Finance/report.txt Finance/report_backup.txt`
+  
 - Copy entire department folder:
-  ```bash
-  cp -r Sales Sales_Backup
-  ```
+  `cp -r Sales Sales_Backup`
+  
 
 ### Notes
 Use `-r` for recursive copy (folders).
 
----
+&nbsp;
 
-## Command
-`cat`
+### 9. cat -  shows the contents
+
+```
+cat
+```
 
 ### Description
 Displays file contents in the terminal.
 
 ### Use Cases
 - Quickly read a policy document:
-  ```bash
-  cat HR/policies.txt
-  ```
+  `cat HR/policies.txt`
+  
 
 ### Notes
 For longer files, use `less` or `more`.
 
----
+&nbsp;
 
-## Command
-`echo`
+### 10. echo - prints on the terminal
+```
+echo
+```
 
 ### Description
 Prints text to the terminal or writes text into a file.
 
 ### Use Cases
 - Display simple messages:
-  ```bash
-  echo "Welcome to Skylines Solutions!"
-  ```
+ ` echo "Welcome to Skylines Solutions!"`
+  
 - Add data to files:
-  ```bash
-  echo "Quarterly Report 2025" > Finance/report.txt
-  ```
+  `echo "Quarterly Report 2025" > Finance/report.txt`
+  
 
 ### Notes
 Use `>>` to append instead of overwrite.
 
----
+&nbsp;
 
-## Command
-`nano` / `vim`
+### 11. nano/vim - text editor
+```
+nano file_name
+```
+```
+ vim file_name
+```
 
 ### Description
 Opens text editors inside the terminal.
@@ -224,7 +230,8 @@ Use `Ctrl + O`, `Enter`, `Ctrl + x` to save and exit `nano`.
 
 ---
 
-## Command
+### Archiveing
+
 `tar -czvf Skyline_Backup.tar.gz ~/Skylines_Solutions`
 
 ### Description
@@ -242,7 +249,7 @@ Flags:
 
 ---
 
-## Command
+### Aliases - can also be used instead of the original command
 `alias`
 
 ### Description
@@ -261,10 +268,21 @@ Creates shortcuts for commands.
 ### Notes
 Aliases are stored in `.bashrc`.
 
+I have customized this command in `.bashrc` to show confirmation messages:
+```bash
+touch() {
+  for file in "$@"; do
+    command touch "$file" && echo "Created/updated: $file"
+  done
+}
+```
+
 ---
 
-## Command
-`source ~/.bashrc`
+### 12. source - updates the temrinal
+```
+source ~/.bashrc
+```
 
 ### Description
 Reloads the `.bashrc` file to apply recent changes.
@@ -277,7 +295,7 @@ Equivalent to reopening your terminal session.
 
 ---
 
-## Command
+### 13. which/type- shows the definition of commmand
 `which` / `type`
 
 ### Description
@@ -292,21 +310,25 @@ Displays the location or definition of a command.
 ### Notes
 Useful for debugging aliases or functions.
 
----
+&nbsp;
 
-## Command
-`clear`
+### 14. clear - cleans the slate .
+```
+clear
+```
 
 ### Description
 Clears the terminal screen.
 
 ### Use Cases
 - Reset the workspace view before running a new set of commands.
+  
+&nbsp;
 
----
-
-## Command
-`sudo`
+### 15. Sudo - The king
+```
+sudo
+```
 
 ### Description
 Executes a command with administrative (root) privileges.
@@ -317,10 +339,12 @@ Executes a command with administrative (root) privileges.
 ### Notes
 Use carefully — can modify system-level files.
 
----
+&nbsp;
 
-## Command
-`history`
+### 16. histoyr - not your browser history
+```
+history
+```
 
 ### Description
 Shows the list of previously executed commands.
@@ -328,11 +352,16 @@ Shows the list of previously executed commands.
 ### Use Cases
 - Review your recent commands.
 - Re-run a command using `!<number>`.
+  
+&nbsp;
 
----
-
-## Command
-`chmod` / `chown`
+### 17. The Admin Shit
+```
+chmod
+```
+```
+chown
+```
 
 ### Description
 Changes file permissions and ownership.
@@ -350,11 +379,13 @@ Changes file permissions and ownership.
 ### Notes
 Essential for secure multi-user environments.
 
----
+&nbsp;
 
-## Searching Text
+### 18. Searching Text
 
-### `grep "<pattern>" <file>`
+ ```
+grep "<pattern>" <file>
+ ```
 
 **Description:** 
 - Searches for text matching a pattern in a file.  
@@ -362,7 +393,7 @@ Essential for secure multi-user environments.
 **Use Cases:**
 - Find warnings or firewall messages in `system.log`.
 
-### `grep -i "<pattern>" <file>`
+ `grep -i "<pattern>" <file>`
 
 **Description:**
 - Case-insensitive search for a pattern in a file.
@@ -370,7 +401,7 @@ Essential for secure multi-user environments.
 **Use Cases:**
 - Search for `"warning"` or `"firewall"` regardless of capitalization.
 
-### `grep -n "<pattern>" <file>`
+ `grep -n "<pattern>" <file>`
 
 **Description:** 
 -Shows line numbers along with matching lines.  
@@ -378,7 +409,7 @@ Essential for secure multi-user environments.
 **Use Cases:** 
 -Locate exactly where warnings or logs occur.
 
-### `grep -l "<pattern>" <file(s)>`
+ `grep -l "<pattern>" <file(s)>`
 
 **Description:** 
 -Lists filenames that contain the matching pattern.  
@@ -386,7 +417,7 @@ Essential for secure multi-user environments.
 **Use Cases:** 
 -Identify which files contain `"Warning"` or `"logo"`.
 
-### `grep -R / -r "<pattern>" <directory>`
+ `grep -R / -r "<pattern>" <directory>`
 
 **Description:** 
 -Recursively searches for a pattern in all files under a directory.  
@@ -394,11 +425,12 @@ Essential for secure multi-user environments.
 **Use Cases:** 
 -Find `"logo"` across all files in `Marketing/assets/`.
 
-
 ---
 
-## Command
-`find`
+### 19. The OG with limitations
+```
+find
+```
 
 ### Description
 Searches for files and directories in a given path.
@@ -408,33 +440,39 @@ Searches for files and directories in a given path.
   ```bash
   find . -name "*.txt"
   ```
-
----
-
-## Command
-`df -h`
+  
+  &nbsp;
+  
+### 20. checks your system shit
+  ```
+  df -h
+  ```
 
 ### Description
 Shows disk usage and available space.
 
 ### Use Cases
 - Check storage usage before creating backups.
+  
+&nbsp;
 
----
-
-## Command
-`du -sh`
+### 21. see how much shit is on
+  ```
+   du -sh
+  ```
 
 ### Description
 Displays total disk space used by a directory.
 
 ### Use Cases
 - Check how much space the `Development` folder uses.
+  
+&nbsp;
 
----
-
-## Command
-`whoami`
+### 22. whoami - i dont know
+  ```
+  whoami
+  ```
 
 ### Description
 Displays the current logged-in user.
@@ -442,9 +480,15 @@ Displays the current logged-in user.
 ### Use Cases
 - Confirm your user privileges inside WSL.
 
+---
+
 ## System Info & WSL
 
-### `uname -a`
+---
+### 23. uname - check for yourself
+   ```
+   uname -a
+  ```
 
 **Description:** 
 - Shows full system information.  
@@ -452,7 +496,12 @@ Displays the current logged-in user.
 **Use Cases:** 
 - Check Linux kernel version in WSL.
 
-### `lsb_release -a`
+&nbsp;
+
+### 24. lsb- release
+   ```
+   lsb_release -a
+  ```
 
 **Description:** 
 - Shows Linux distribution details.  
@@ -460,7 +509,12 @@ Displays the current logged-in user.
 **Use Cases:** 
 - Confirm Ubuntu version running on WSL.
 
-### `hostname`
+- &nbsp;
+
+### 25. hostname - shows my user name in my local machine
+   ```
+   hostname
+  ```
 
 **Description:** 
 - Shows the system hostname.  
@@ -468,7 +522,12 @@ Displays the current logged-in user.
 **Use Cases:** 
 - Identify machine name in WSL.
 
-### `hostnamectl`
+&nbsp;
+
+### 26. hostnamectl - Show this error on wsl (windows )
+   ```
+   hostnamectl
+  ```
 
 **Description:** 
 - Displays system info (only works with systemd).  
@@ -476,7 +535,23 @@ Displays the current logged-in user.
 **Use Cases:** 
 - Not available in WSL; will fail with systemd error.
 
-### `ps aux`
+  ### Notes:
+  The Error:
+  -System has not been booted with systemd as init system (PID 1). Can't operate.
+Failed to connect to bus: Host is down
+
+### This occurs when:
+
+- You’re running Linux inside WSL (Windows Subsystem for Linux) — older versions (WSL1 or some setups of WSL2) don’t use systemd by default.
+
+- You’re in a Docker container, minimal chroot environment, or a lightweight distro that doesn’t include systemd.
+
+&nbsp;
+
+### 27. process status
+   ```
+   ps aux
+  ```
 
 **Description**
 
@@ -486,9 +561,11 @@ Displays the current logged-in user.
 
 - Monitor system performance, identify resource-heavy processes, or troubleshoot unresponsive applications.
 
-## Command
+---
 
-stderr (Standard Error) / 2> / 2>&1
+## Text - commands
+
+stderr (Standard Error) / `2>` / `2>&1`
 
 **Description**
 
@@ -501,6 +578,32 @@ stderr (Standard Error) / 2> / 2>&1
 - Use 2> /dev/null to silently discard unwanted error messages, such as "Permission denied" warnings.
 
 - Use 2>&1 to combine the error stream and standard output stream so both go to the same location, like a log file.
+
+  ## pipe and tee
+
+  `|`- pipe operator
+  `tee` - tee
+
+  **Description**
+`|` the pipe operator takes the standard output of the command on its left and uses it as the standard input ofr the command on its right
+
+`tee` splits the output stream into two directions, one is standard output (terminal) and another to a specified file
+
+  **usecase**
+
+  example
+```bash ls -la /etc | less ```
+     This will list the command form the /etc directory, and      opens in page by page mannner as the less command is         used 
+
+ example 
+```bash ls -la /etc | tee etc_listing.txt | grep "conf" ```
+
+ **This command does three things:**
+ - it lists the contents of teh /etc directory.
+ - it pipes that ouput to `tee`, which savesa a copy to etc_listing.txt and also passes it along
+ - The output from `tee` is then piped to grep, which filters for lines containing "conf"
+
+
 ---
 
 # 🏗️ Project-Specific Context
