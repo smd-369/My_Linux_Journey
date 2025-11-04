@@ -479,11 +479,28 @@ Displays the current logged-in user.
 ### `ps aux`
 
 **Description**
+
 - Displays detailed information about all running processes, including the user, CPU and memory usage, and the command that started each process.
 
 **Use Cases**
+
 - Monitor system performance, identify resource-heavy processes, or troubleshoot unresponsive applications.
 
+## Command
+
+stderr (Standard Error) / 2> / 2>&1
+
+**Description**
+
+- Is the dedicated output stream for a program's error messages and diagnostic   output. It uses File Descriptor 2.
+
+**Use Cases**
+
+- Use 2> filename to redirect only the errors into a specific log file, separating them from regular output.
+
+- Use 2> /dev/null to silently discard unwanted error messages, such as "Permission denied" warnings.
+
+- Use 2>&1 to combine the error stream and standard output stream so both go to the same location, like a log file.
 ---
 
 # 🏗️ Project-Specific Context
