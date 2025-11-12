@@ -620,7 +620,10 @@ stderr (Standard Error) / `2>` / `2>&1`
 
    **Note**
    - `$PATH ` When you type a command, your system searches through these directories to find the corresponding executable file in the path variable         of the Environment variables
-
+    - Variable are of two types local and Environmental
+    - local variable are not inherited by the child shell, where as Env does.
+    - start a child shell by simply typing `zsh` and pressing Enter.
+    - type `exit` to exit the child shell 
      &nbsp;
      
     **usecase**
