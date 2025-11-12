@@ -341,7 +341,7 @@ Use carefully — can modify system-level files.
 
 &nbsp;
 
-### 16. histoyr - not your browser history
+### 16. history - not your browser history
 ```
 history
 ```
@@ -584,25 +584,49 @@ stderr (Standard Error) / `2>` / `2>&1`
   `|`- pipe operator
   `tee` - tee
 
-  **Description**
-`|` the pipe operator takes the standard output of the command on its left and uses it as the standard input ofr the command on its right
+    **Description**
+    `|` the pipe operator takes the standard output of the command on its left and uses it as the standard input ofr the command on its right
 
-`tee` splits the output stream into two directions, one is standard output (terminal) and another to a specified file
+    `tee` splits the output stream into two directions, one is standard output (terminal) and another to a specified file
 
-  **usecase**
+   **usecase**
 
-  example
-```bash ls -la /etc | less ```
+    example
+    ```bash ls -la /etc | less ```
      This will list the command form the /etc directory, and      opens in page by page mannner as the less command is         used 
 
- example 
-```bash ls -la /etc | tee etc_listing.txt | grep "conf" ```
+     example 
+      ```bash ls -la /etc | tee etc_listing.txt | grep "conf" ```
 
- **This command does three things:**
- - it lists the contents of teh /etc directory.
- - it pipes that ouput to `tee`, which savesa a copy to etc_listing.txt and also passes it along
- - The output from `tee` is then piped to grep, which filters for lines containing "conf"
+     **This command does three things:**
+       - it lists the contents of teh /etc directory.
+       - it pipes that ouput to `tee`, which savesa a copy to etc_listing.txt and also passes it along
+       - The output from `tee` is then piped to grep, which filters for lines containing "conf"
 
+&nbsp;
+
+  ## env - To see all the environment variables currently set for your session,
+   `env`
+&nbsp;
+      **Description**
+        `env`- our Linux system uses environment variables to store information that the shell and other processes can access. These variables                 contain useful data about your user session and system configuration.
+&nbsp;
+
+- you can view the value of the variaable by prefixing it with `$`
+-  Example :
+   ```
+    echo $HOME
+   ```
+
+   **Note**
+   - `$PATH ` When you type a command, your system searches through these directories to find the corresponding executable file in the path variable         of the Environment variables
+
+     &nbsp;
+     
+    **usecase**
+     - Think of the **PATH** like a **treasure map** that shows your computer where to find programs.
+      If a program is installed in a special place (like `/opt/coolapp/bin`), you must **add that path to the map**.
+      Then, whenever you type the program’s name (like `coolapp`), your computer knows exactly **where to look and open it**.
 
 ---
 
